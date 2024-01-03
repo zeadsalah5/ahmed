@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5; /* Updated background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Updated box shadow */
+            width: 300px;
+            text-align: center;
+        }
+
+        .form-container h2 {
+            color: #e44d26; /* Updated heading color */
+            margin-bottom: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 24px; /* Updated font size */
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555555;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px; /* Updated font size */
+        }
+
+        .form-container button {
+            background-color: #e44d26; /* Updated button color */
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px; /* Updated font size */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .form-container button:hover {
+            background-color: #d2381a; /* Darker color on hover */
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            color: #930000;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                width: 80%;
+            }
+        }
+    </style>
+    <title>Love Percentage Form</title>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>قياس نسبة الحب</h2>
+        <form id="nameForm">
+            <label for="firstName">اسم الولد:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">اسم البنت:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <button type="button" onclick="showRandomPercentage()">النسبة</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function showRandomPercentage() {
+            let randomPercentage = Math.random() * 100;
+            document.getElementById('result').innerHTML = 'نسبة الحب: ' + randomPercentage.toFixed(0) + '%';
+        }
+    </script>
+
+</body>
+
+</html>
